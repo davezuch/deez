@@ -1,0 +1,10 @@
+{
+  "name": "deez",
+  "version": "1.0.0",
+  "main": "deez.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
