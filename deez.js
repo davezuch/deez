@@ -439,7 +439,7 @@ window.deez = (function() {
             // scroll the page to position of targeet
             // target can be an integer or element
             scrollPage: function(target, offset, time) {
-                if (!target) { return; }
+                if (undefined === target) { return; }
                 if (!offset && isNaN(offset) && this.scrollOffset) {
                     offset = this.scrollOffset;
                     if ('function' === typeof offset) { offset = offset(); }
