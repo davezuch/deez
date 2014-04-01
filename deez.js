@@ -442,6 +442,7 @@ window.deez = (function() {
                 if (!target) { return; }
                 if (!offset && isNaN(offset) && this.scrollOffset) {
                     offset = this.scrollOffset;
+                    if ('function' === typeof offset) { offset = offset(); }
                 }
 
                 offset = offset && isNaN(offset) ? deez(offset).prop('offsetHeight') : offset || 0;
