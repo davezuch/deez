@@ -32,7 +32,7 @@ if (!document.querySelector) {
     };
 }
 
-if(!Array.isArray) {
+if (!Array.isArray) {
     Array.isArray = function(arg) {
         return Object.prototype.toString.call(arg) === '[object Array]';
     };
@@ -44,7 +44,7 @@ if(!Array.isArray) {
  *
  * global console */
 
-window.deez = (function() {
+(function() {
     // setup shortcuts
     var win = window,
         doc = win.document,
@@ -538,5 +538,18 @@ window.deez = (function() {
 
     fns.extend(deez, fns);
 
-    return deez;
+    // export as Common JS module
+    if ('undefined' !== typeof module && module.exports) {
+        module.exports = deez;
+    }
+    // or AMD module
+    else if ('function' === typeof define && define.amd) {
+        define(function() {
+            return deez;
+        });
+    }
+    // or set as browser global
+    else {
+        window.deez = deez;
+    }
 })();
