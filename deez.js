@@ -38,7 +38,7 @@ if (!Array.isArray) {
     };
 }
 
-/* deez.js 1.0.0
+/* deez.js 1.0.3
  * (c) 2014 David Zuch | MIT
  * a minimal library targeted for lightweight, responsive applications
  *
