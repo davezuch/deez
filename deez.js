@@ -198,7 +198,7 @@ if (!Array.isArray) {
                     match = deez.matchTags(selector, context);
                 // Experimental: if class, match class name (faster), else match query
                 } else if (/^\.\w[A-Za-z0-9-_]*/.test(selector) && 'getElementsByClassName' in doc) {
-                    match = (context || doc).getElementsByClassName(selector);
+                    match = (context || doc).getElementsByClassName(selector.substr(1));
                 } else {
                     match = slice.call((context || doc).querySelectorAll(selector), 0);
                 }
